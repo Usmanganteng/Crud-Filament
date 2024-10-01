@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
+            $table->string('nim')->unique();
+            $table->string('nama');
+            $table->enum('fakultas', ['MIPA', 'FEBI', 'SOSHUM']);
             $table->timestamps();
         });
     }
